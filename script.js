@@ -1,10 +1,9 @@
 
-
 document.getElementById("continue").addEventListener("click", function () {
   // Collecting PIN code from input fields
   const pinCodeElements = document.querySelectorAll("#inputs-view .input");
   const confirmPinElements = document.querySelectorAll("#inputs-hide .input");
-
+  //  console.log(pinCodeElements);
   const pinCode = Array.from(pinCodeElements)
     .map((input) => input.value)
     .join("");
@@ -24,47 +23,55 @@ document.getElementById("continue").addEventListener("click", function () {
     return;
   }
 
+
+  const page1 = document.querySelector(".page1");
+  const page2 = document.querySelector(".page2");
+
   // Fetching data from the API
 
-  fetch(`https://api.postalpincode.in/pincode/751010`)
+  fetch(`https://api.postalpincode.in/pincode/${pinCode}`)
     .then((response) => response.json())
     .then((data) => {
-      if (data[0].Status === "Success") {
+      // console.log(data);
+      const statusElement = page2.querySelector(".status");
+
+      if (data[0].Status === "Success"){
         const postOffice = data[0].PostOffice[0];
 
-        document.querySelector(
-          ".status"
-        ).textContent = `Status: ${data[0].Status}`;
-        document.querySelector(
-          ".name"
-        ).textContent = `Name: ${postOffice.Name}`;
-        document.querySelector(
-          ".state"
-        ).textContent = `State: ${postOffice.State}`;
-        document.querySelector(
-          ".deliveryStatus"
-        ).textContent = `Delivery Status: ${postOffice.DeliveryStatus}`;
-        document.querySelector(
-          ".dist"
-        ).textContent = `District: ${postOffice.District}`;
-        document.querySelector(
-          ".city"
-        ).textContent = `City: ${postOffice.Block}`;
-        document.querySelector(
-          ".country"
-        ).textContent = `Country: ${postOffice.Country}`;
-        document.querySelector(".pincode").textContent = `PIN Code: ${pinCode}`;
+        page2.querySelector(".status").textContent = "Data fetched successfully!";
+        page2.querySelector(".status").style.color = "green"; 
+        page2.querySelector(".name").textContent = `Name: ${postOffice.Name}`;
+        page2.querySelector(".state").textContent = `State: ${postOffice.State}`;
+        page2.querySelector(".deliveryStatus").textContent = `Delivery Status: ${postOffice.DeliveryStatus}`;
+        page2.querySelector(".dist").textContent = `District: ${postOffice.District}`;
+        page2.querySelector(".city").textContent = `City: ${postOffice.Block}`;
+        page2.querySelector(".country").textContent = `Country: ${postOffice.Country}`;
+        page2.querySelector(".pincode").textContent = `PIN Code: ${pinCode}`;
+
+        page2.style.transform = "translateX(0%)";
+        page1.style.transform = "translateX(-110%)";
       } else {
-        document.querySelector(".status").textContent =
-          "No delivery information found.";
+        const statusElement = page2.querySelector(".status");
+        statusElement.textContent ="No delivary information found";
+        statusElement.style.color = "red";
+
+        page2.style.transform = "translateX(0%)";
+        page1.style.transform = "translateX(-110%)";
       }
     })
     .catch((error) => {
-      document.querySelector(".status").textContent = `Error: ${error.message}`;
-      document.querySelector(".error").style.display = "block";
+      const statusElement = page2.querySelector('.status');
+      statusElement.textContent = `Error: ${error.message}`;
+      statusElement.style.color = "red"; 
+      page2.style.transform = "translateX(0%)";
+      page1.style.transform = "translateX(-110%)";
     
     });
 });
+
+
+
+
 
 function setupAutoTab() {
   const inputs = document.querySelectorAll(".input");
