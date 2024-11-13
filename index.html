@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link
+    rel="stylesheet"
+    href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.6.0/css/all.min.css"
+    integrity="sha512-Kc323vGBEqzTmouAECnVceyQqyqdsSiqLQISBL29aUW4U/M7pSPA/gEUZQqv1cwx4OnYxTxve5UMg5GT6L4JJg=="
+    crossorigin="anonymous"
+    referrerpolicy="no-referrer"
+  />
+    <link rel="stylesheet" href="style.css">
+    <title>Pin code checker</title>
+</head>
+<body>
+    <div class="container">
+        <div class="page1">
+          <i class="fa-solid fa-angle-left" style="padding: 15px"></i>
+            <div class="header-section">
+                <p>Setting up</p>
+              
+                <h2>Your PIN code</h2>
+            </div>
+            <div class="forOf">
+                1 of 2
+                <div class="progress-bar">
+                    <div class="progress active"></div>  
+                    <div class="progress"></div>  
+                </div> 
+               
+            </div>
+            <p>6 Digit Pin code</p>
+            <div class="input-section-1">
+                <label>pin code</label>
+                <div class="input-section" id="inputs-view">
+                    <input type="text" maxlength="1" inputmode="numeric" class="input">
+                    <input type="text" maxlength="1" inputmode="numeric" class="input">
+                    <input type="text" maxlength="1" inputmode="numeric" class="input">
+                    <input type="text" maxlength="1" inputmode="numeric" class="input">
+                    <input type="text" maxlength="1" inputmode="numeric" class="input">
+                    <input type="text" maxlength="1" inputmode="numeric" class="input">
+                </div>
+            </div>
+            <div class="input-section-2">
+                <label>confirm your pin code</label>
+                <div class="input-section" id="inputs-hide">
+                    <input type="password" maxlength="1" inputmode="numeric" class="input">
+                    <input type="password" maxlength="1" inputmode="numeric" class="input">
+                    <input type="password" maxlength="1" inputmode="numeric" class="input">
+                    <input type="password" maxlength="1" inputmode="numeric" class="input">
+                    <input type="password" maxlength="1" inputmode="numeric" class="input">
+                    <input type="password" maxlength="1" inputmode="numeric" class="input">
+                </div>
+                <p class="message">your PIN codes are the same</p>
+            </div>
+            <button class="btn" id="continue">Continue</button>
+        </div>
+        <div class="page2">
+            <div class="details">
+                <div class="status">
+                </div>
+                <div class="name">
+                </div>
+                <div class="state">
+                </div>
+                <div class="deliveryStatus">
+                </div>
+                <div class="dist">
+                </div>
+                <div class="city">
+                </div>
+                <div class="country">
+                </div>
+                <div class="pincode">
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="pincode_result">
+        <div class="succesfull">
+          Succesfull <i class="fa-solid fa-circle-check" style="color: green"></i>
+        </div>
+        <div class="error">
+          Error <i class="fa-solid fa-square-xmark" style="color: red"></i>
+        </div>
+      </div>
+
+
+        
+    <script src="script.js"></script>
+</body>
+</html>

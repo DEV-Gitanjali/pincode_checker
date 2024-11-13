@@ -1,0 +1,118 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+.container {
+  height: 100vh;
+  width: 100vw;
+}
+@media (max-width: 600px) {
+  .container {
+    height: 90vh;
+    width: 90vw;
+    margin: 1rem 1rem;
+    position: relative;
+  }
+  .page1 {
+    height: 10vh;
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    gap: 50px;
+    position: absolute;
+  }
+  img {
+    width: 1.5rem;
+  }
+  label {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: bold;
+    font-family: "Courier New", Courier, monospace;
+  }
+  .input {
+    width: 35px;
+    height: 35px;
+    padding: 5px;
+    text-align: center;
+    border: 1px solid black;
+    font-weight: bold;
+    border-radius: 3px;
+    background-color: rgba(0, 0, 0, 0.029);
+  }
+  .input-section {
+    margin-top: 6px;
+    display: flex;
+    gap: 30px;
+  }
+  .input-img {
+    border: 1px solid black;
+    padding: 5px 3px;
+    border-radius: 2px;
+    cursor: pointer;
+  }
+  .btn {
+    padding: 10px;
+    background-color: red;
+    color: white;
+    outline: none;
+    border: none;
+    border-radius: 5px;
+    font-weight: bold;
+    cursor: pointer;
+  }
+  .forOf {
+    font-weight: bold;
+    font-size: 20px;
+  }
+  .forOf::before {
+    content: "";
+  }
+  .details{
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    align-items: center;
+  }
+  .status{
+    color: green;
+    font-size: x-large;
+    font-weight: bold;
+  }
+  .name, .state, .dist, .city, .country, .pincode, .deliveryStatus{
+    font-size: x-large;
+    font-weight: bold;
+  }
+
+  .pincode_result{
+    height: 90vh;
+    width: 90vw;
+    margin-left: 40%;
+    position: relative;
+  
+  }
+  
+  .progress-bar {
+    display: flex;
+    gap: 4px;
+    margin: 15px 0;
+  }
+  .progress {
+    flex: 1;
+    height: 4px;
+    background-color: #D3D3D3;
+    border-radius: 2px;
+  }
+  .progress.active {
+    background-color: #E64C3C;
+  }
+
+  .message{
+    color: rgb(105, 199, 105);
+    padding-top: 10px;
+  }.page2{
+    transform: translateX(-200%)
+  }
+}
+
